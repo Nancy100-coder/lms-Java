@@ -25,7 +25,7 @@ public class BookDAO {
     public void addBook(String title, String author) {
         String sql = "INSERT INTO books (title, author, status) VALUES (?, ?, 'Available')";
         try (Connection conn = DatabaseUtil.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+             PreparedStatement pstmt = conn.prepareStaterrrment(sql)) {
             pstmt.setString(1, title);
             pstmt.setString(2, author);
             pstmt.executeUpdate();
